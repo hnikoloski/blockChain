@@ -1,11 +1,19 @@
 const Block = require('./block');
 
 describe('Block', () => {
+    let data, lastBlock, block;
+
     beforeEach(() => {
-        const data = 'bar';
+        data = 'bar';
+        lastBlock = Block.genesis();
+        block = Block.mineBlock(lastBlock, data);
     });
 
-    it('sets the `data` to match the input', () => {});
+    it('sets the `data` to match the input', () => {
+        expect(block.data).toEqual();
+    });
 
-    it('sets the `lastHash` to match the hash of the last block', () => {});
+    it('sets the `lastHash` to match the hash of the last block', () => {
+
+    });
 })
