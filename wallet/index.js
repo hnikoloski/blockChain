@@ -20,20 +20,19 @@ class Wallet {
     }
 
     createTransaction(recipient, amount, transactionPool) {
-        //    Checks if amount is greater than the balance of the owner so it does NOT add it to the pool.
         if (amount > this.balance) {
-            console.log(`Amount: ${amount} exceeds the current balance: ${this.balance}`);
+            console.log(`Amount: ${amount}, exceeds current balance: ${this.balance}`);
             return;
         }
 
         let transaction = transactionPool.existingTransaction(this.publicKey);
-
         if (transaction) {
-            transaction.update(this, recipient, amount)
+            transaction.update(this, recipient, amount);
         } else {
-            transaction = Transaction.new(this, recipient, amount);
+            transaction = Transaction.newTransaction(this, recipient, amount);
             transactionPool.updateOrAddTransaction(transaction);
         }
+
         return transaction;
     }
 }
