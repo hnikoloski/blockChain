@@ -1,3 +1,5 @@
 # Block Chain 
 
-## Still in development
+## Wallet, transactions added
+## Mining added
+## UI TBD
